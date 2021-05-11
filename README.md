@@ -1,6 +1,6 @@
 # Employee-MGMT
 
-## What is the use of this Repo:
+## Poject Overview:
 #### This Project is a ReactJS based Project which demonstrates the following:
 
 1. Managing Employees details with user and admin roles
