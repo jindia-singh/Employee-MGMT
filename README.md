@@ -47,4 +47,4 @@ create-react-app : The following link has all the commands that can be used with
 
 ReactJS : Refer to https://reactjs.org/ to understand the concepts of ReactJS
 
-Material UI : Refer to https://https://material-ui.com/getting-started/learn/ to understand how to use material UI.
+Material UI : Refer to https://material-ui.com/getting-started/learn/ to understand how to use material UI.
