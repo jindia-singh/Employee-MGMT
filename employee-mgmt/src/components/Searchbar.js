@@ -34,10 +34,11 @@ export default function Searchbar() {
     setValues({ ...values, [prop]: event.target.value });
   };
   return (
-    <div className={classes.root}>
+    <div className={classes.root}  style={{  marginTop: "20px",marginLeft: "10px" }} >
         <TextField
         className={classes.margin}
         fullWidth
+        size="small"
         variant="outlined"
         id="input-with-icon-textfield"
         label="Search Employee"

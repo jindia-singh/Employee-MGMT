@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Grid, Container} from '@material-ui/core';
 import Searchbar from './Searchbar'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,28 +38,15 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" elevation={0}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
             Employee Management System
           </Typography>
-          <Button color="inherit" variant="outlined">Logout</Button>
+          <AccountCircleIcon fontSize="large"/>
+          {/* <Button color="inherit" variant="outlined">Logout</Button> */}
         </Toolbar>
       </AppBar>
-      {/* <Container> */}
-        <Grid container className={classes.container}>
-            <Grid item xs={12} sm={12} md={8} lg={8}>
-                <Searchbar/>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} className={classes.addHolder}>
-                <Button color="primary" variant='contained' className={classes.btn}>Add User</Button>
-            </Grid>
-        </Grid>
-      {/* </Container> */}
-        
     </div>
   );
 }
