@@ -1,6 +1,4 @@
 import './App.css';
-import Searchbar from './components/Searchbar'
-import Navbar from './components/Navbar'
 import { Main } from "./screens/Main";
 
 function App() {

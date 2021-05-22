@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
+import { useDispatch, useSelector } from "react-redux";
+import  * as API  from "../redux/service/getEmployeeBySearch";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,18 +23,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Searchbar() {
+  const dispatch = useDispatch();
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
+  const [value, setValue] = React.useState();
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+  async function getEmployeeSearch(data){
+    dispatch(API.getEmployeeBySearch(data));
+  }
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
   };
+  
+  const onClickHandler=()=>{
+       getEmployeeSearch(value)
+  }
   return (
     <div className={classes.root}  style={{  marginTop: "20px",marginLeft: "10px" }} >
         <TextField
@@ -43,12 +48,13 @@ export default function Searchbar() {
         id="input-with-icon-textfield"
         label="Search Employee"
         InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
+          endAdornment: (
+            <InputAdornment position="end">
+              <SearchIcon onClick={onClickHandler} style={{cursor:"pointer"}} />
             </InputAdornment>
           ),
         }}
+        onChange={(e)=>handleChange(e)}
       />
     </div>
   );
